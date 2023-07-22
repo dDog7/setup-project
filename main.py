@@ -3,7 +3,7 @@ import data.scripts.engine as engine
 import data.scripts.settings as settings
 
 pygame.init()
-display = pygame.display.set_mode((1920, 1080), pygame.OPENGL|pygame.FULLSCREEN|pygame.HWACCEL)
+display = pygame.display.set_mode((1920, 1080), pygame.OPENGL|pygame.FULLSCREEN|pygame.HWACCEL|pygame.DOUBLEBUF)
 screen = pygame.Surface((1920, 1080))
 engine.screen = screen
 clock = pygame.time.Clock()
@@ -21,7 +21,7 @@ while running:
     engine.clear((255, 0, 255))
     
     engine.update()
-    shader.render(screen)
     pygame.display.flip()
+    shader.render(screen)
     engine.dt = clock.tick(fpsCap) / 1000
 pygame.quit()
