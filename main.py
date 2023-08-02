@@ -21,7 +21,7 @@ while running:
     engine.clear((255, 0, 255))
     
     engine.update()
-    pygame.display.flip()
     shader.render(screen)
+    pygame.display.flip()
     engine.dt = clock.tick(fpsCap) / 1000
 pygame.quit()
